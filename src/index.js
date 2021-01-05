@@ -8,7 +8,10 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* wrapping whole application in githubprovider */}
+    <GithubProvider>
+      <App />
+    </GithubProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
