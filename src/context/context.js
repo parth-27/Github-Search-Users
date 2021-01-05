@@ -15,5 +15,7 @@ const GithubContext = React.createContext();
 // wrapping the whole application in githubprovider.
 // whatever is passed through value is accessible throughout the application.
 const GithubProvider = ({ children }) => {
-    return <GithubContext.Provider value={ "hello" }>{ children }</GithubContext.Provider>
-}
+    return <GithubContext.Provider value={"hello"}>{children}</GithubContext.Provider>
+};
+
+export { GithubContext, GithubProvider };
