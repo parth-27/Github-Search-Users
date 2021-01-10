@@ -5,23 +5,25 @@ import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from './pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/" exact> {/*if exact prop is not present then Dashboard will be present in all the routes */}
-          <Dashboard></Dashboard>
-        </Route>
+	return (
+		<AuthWrapper>
+			<Router>
+				<Switch>
+					<PrivateRoute path="/" exact> {/*if exact prop is not present then Dashboard will be present in all the routes */}
+						<Dashboard></Dashboard>
+					</PrivateRoute>
 
-        <Route path="/login" exact>
-          <Login />
-        </Route>
+					<Route path="/login" exact>
+						<Login />
+					</Route>
 
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
-  );
+					<Route path="*">
+						<Error />
+					</Route>
+				</Switch>
+			</Router>
+		</AuthWrapper>
+	);
 }
 
 export default App;
